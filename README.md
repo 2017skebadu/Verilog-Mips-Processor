@@ -1,6 +1,6 @@
 # Verilog-Mips-Processor
 
-This is a 32-bit single core microprocessor based on the MIPS architecture. I have created this microprocessor before in my Computer Architecture class, but that was written in VHDL, so as I am learning Verilog I want to get some good practice that can also show my progress. This also is an oppertunity for me to practice proper coding and documentation, and will serve as my one main personal project until completed to a level I feel sufficient. This time when implimenting the architecture, I'll eventually want to include pipeline shortcuts for hazards, and introduce memory native to the FPGA for instructions. 
+This is a 32-bit single core microprocessor based on the MIPS architecture. I have created this microprocessor before in my Computer Architecture class, but that was written in VHDL, so as I am learning Verilog I want to get some good practice that can also show my progress. This also is an opportunity for me to practice proper coding and documentation, and will serve as my one main personal project until completed to a level I feel sufficient. This time when implimenting the architecture, I'll eventually want to include pipeline shortcuts for hazards, and introduce memory native to the FPGA for instructions. 
 
 ## Getting Started
 
