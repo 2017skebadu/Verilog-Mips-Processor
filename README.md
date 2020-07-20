@@ -8,8 +8,9 @@ Feel free to download this project and look through it as you'd like. I am using
 
 ### Prerequisites
 To test the code yourself, all you need is:
-*Xilinx Vivado 2019.2 or later
-*Xilinx Basys 3 Development board - for hardware testing
+
+* Xilinx Vivado 2019.2 or later
+* Xilinx Basys 3 Development board - for hardware testing
 
 ## Author
 
