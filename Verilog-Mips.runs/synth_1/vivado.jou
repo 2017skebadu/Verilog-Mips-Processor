@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue Aug  4 22:53:58 2020
+# Process ID: 22928
+# Current directory: C:/SPB_Data/git/Verilog-Mips-Processor/Verilog-Mips.runs/synth_1
+# Command line: vivado.exe -log ALU.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ALU.tcl
+# Log file: C:/SPB_Data/git/Verilog-Mips-Processor/Verilog-Mips.runs/synth_1/ALU.vds
+# Journal file: C:/SPB_Data/git/Verilog-Mips-Processor/Verilog-Mips.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source ALU.tcl -notrace
