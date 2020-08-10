@@ -1,17 +1,22 @@
 `include "environment.sv"
 
 //currently testing: ALU
-program test(intf_ALU i_intf);
+class rtest;
 	environment env;
+	mailbox gen2driv;
 
-	initial begin
-		//creating environment
-		env = new (i_intf);
-
+  function new(virtual ALU_intf intf );
+        env = new(intf);
+    endfunction
+	
+	virtual task run();	
 		//setting repeat count, or choosing how many packets to generate
 		env.gen.REPEAT_COUNT = 10;
 
 		//runs the env, which runs the generator and driver
 		env.run();
-	end
-endprogram
+	    
+	endtask
+	   
+	   
+endclass

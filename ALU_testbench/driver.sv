@@ -1,12 +1,15 @@
 class driver;
 
 	//creating virtual interface handle
-	virtual intf_ALU vif;
+	virtual ALU_intf vif;
 
 	//creating mailbox handle
 	mailbox gen2driv;
+  
+  	//creating generator
+  	generator gen;
 
-	function new(virtual intf_ALU vif, mailbox gen2driv);
+  function new(virtual ALU_intf vif,mailbox gen2driv);
 		//getting the interface
 		this.vif = vif;
 		//getting the mailbox from env
@@ -15,12 +18,10 @@ class driver;
 
 	//reset task: Reset the interface signals to default/initial values
 	task reset;
-		wait(vif.reset);
 	    $display("[ DRIVER ] ----- Reset Started -----");
-	    vif.a <= 0;
-	    vif.b <= 0;
-	    vif.valid <= 0;
-	    wait(!vif.reset);
+	    vif.A <= 0;
+	    vif.B <= 0;
+      	vif.ALUCntl <= 4'b0000;
 	    $display("[ DRIVER ] ----- Reset Ended   -----");
     endtask
 
@@ -28,17 +29,37 @@ class driver;
     int n_trans;
 
     //drive the transaction items to ingerface signals
-    task drive;
-    	begin
-	    	transaction trans;
+    task main;
+      	forever begin
+	    	ALU_item trans;
 	    	gen2driv.get(trans);
 	    	@(posedge vif.clk);
-	    	vif.valid <= 1;
+	    	vif.ALUCntl <= 4'b0010;
+          	vif.CarryIn <= 0;
 	    	vif.A 	  <= trans.A;
 	    	vif.B 	  <= trans.B;
-	    	@(posedge vif.clk);
-	    	vif.valid <= 0;
+	    	@(posedge vif.clk);	    	
 	    	trans.C     <= vif.C;
+          	trans.display("[ Driver ]");
 	    	n_trans++;
     	end;
-    endtask;
+    endtask
+
+    //start testing by beginning generator and driver independently
+    task test();
+    	fork
+    		gen.main();
+    		main();
+    	join_any
+    endtask
+
+    //initializes driver, runs tests, and waits for ending triggers
+    //calls $finish to end simulation
+    task run;
+    	reset();
+    	test;
+    	//wait(gen.ended.triggered);
+    	wait(gen.REPEAT_COUNT == n_trans);
+    	$finish;
+    endtask
+endclass

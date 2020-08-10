@@ -12,9 +12,9 @@ class environment;
 	mailbox gen2driv;
 
 	//virtual interface
-	virtual intf_ALU vif;
+	virtual ALU_intf vif;
 
-	function new(virtual intf_ALU vif);
+  function new(virtual ALU_intf vif);
 		//get the interface from test
 		this.vif = vif;
 
@@ -36,10 +36,11 @@ class environment;
 
     //initializes driver, runs tests, and waits for ending triggers
     //calls $finish to end simulation
-    task run;
+    virtual task run();
     	driv.reset();
-    	test;
+    	test();
     	wait(gen.ended.triggered);
     	wait(gen.REPEAT_COUNT == driv.n_trans);
     	$finish;
     endtask
+endclass   

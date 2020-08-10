@@ -1,7 +1,7 @@
 class generator;
 
 	//declaring the transaction class
-	rand transaction trans;
+	rand ALU_item trans;
 
 	//declaring mailbox
 	mailbox gen2driv;
@@ -12,7 +12,7 @@ class generator;
 	//repeat_count specifies the number of packets to generate
 	int REPEAT_COUNT;
 
-	function new(mailbox gen2driv);
+  function new(mailbox gen2driv);
 		//getting mailbox handle from env
 		this.gen2driv = gen2driv;
 	endfunction
@@ -23,6 +23,7 @@ class generator;
 			trans = new();
 			if(!trans.randomize()) $fatal("Gen:: trans randomization failed");
 			gen2driv.put(trans);
+          	$display("new trans");
 		end
 		-> ended; //end of packet generation
 	endtask

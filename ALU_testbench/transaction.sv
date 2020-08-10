@@ -1,9 +1,9 @@
-class transaction;
+class ALU_item;
 
 	//declaring the transaction items
 	rand bit [31:0] A;
 	rand bit [31:0] B;
-		 bit [3:0] ALUCntl;
+	rand bit [3:0] ALUCntl;
 		 bit [31:0] C;
 
 	//display transaction properties
@@ -11,8 +11,8 @@ class transaction;
     $display("-------------------------");
     $display("- %s ",name);
     $display("-------------------------");
-    $display("- a = %0d, b = %0d, Cntl = %0h",A,B,ALUCntl);
-    $display("- output = %0d",c);
+      $display("- a = %0h, b = %0h, Cntl = %0h",A,B,ALUCntl);
+      $display("- output = %0d",C);
     $display("-------------------------");
   endfunction
 endclass
