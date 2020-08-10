@@ -1,3 +1,7 @@
+// Module: ALU
+// Description: 32 bit signed Arithmetic Logic Unit containing minimum functions for MIPS standard.
+// 
+//
 module ALU (
     input [31:0] A,
     input [31:0] B,
@@ -21,13 +25,13 @@ begin
 			ALU_Result = Add_Result;
 		4'b0110:	//Subtraction
 			ALU_Result = Sub_Result;
-		4'b0000:	
+		4'b0000:	//AND
 			ALU_Result = A & B;
-		4'b0001:
+		4'b0001:    //OR
 			ALU_Result = A | B;
-		4'b0011:	
+		4'b0011:	//XOR
 			ALU_Result = A ^ B;
-		4'b1100:	
+		4'b1100:	//NOR
 			ALU_Result = A |~ B;
 		default: ALU_Result = A;
 	endcase // ALUCntl
@@ -57,9 +61,9 @@ begin
 	add_ov <= (A[31] & B[31] & (!ALU_Result[31])) | ((!A[31]) & (!B[31]) & ALU_Result[31]); 
 	sub_ov <= (A[31] & !B[31] & (!ALU_Result[31])) | ((!A[31]) & B[31] & ALU_Result[31]);
 	case(ALUCntl)
-		4'b0010:
+		4'b0010: //Addition
 			Overflow <= add_ov;
-		4'b0110:
+		4'b0110: //Subtraction
 			Overflow <= sub_ov;
 		default: Overflow <= 1'bZ;
 	endcase

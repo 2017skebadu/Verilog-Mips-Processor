@@ -12,7 +12,7 @@ class ALU_item;
     $display("- %s ",name);
     $display("-------------------------");
       $display("- a = %0h, b = %0h, Cntl = %0h",A,B,ALUCntl);
-      $display("- output = %0d",C);
+      $display("- output = %0h",C);
     $display("-------------------------");
   endfunction
 endclass

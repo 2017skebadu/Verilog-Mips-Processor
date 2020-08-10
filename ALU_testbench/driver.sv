@@ -22,6 +22,9 @@ class driver;
 	    vif.A <= 0;
 	    vif.B <= 0;
       	vif.ALUCntl <= 4'b0000;
+      	vif.Zero <= 0;
+      	vif.CarryOut <= 0;
+      	vif.Overflow <= 0;
 	    $display("[ DRIVER ] ----- Reset Ended   -----");
     endtask
 
@@ -34,12 +37,11 @@ class driver;
 	    	ALU_item trans;
 	    	gen2driv.get(trans);
 	    	@(posedge vif.clk);
-	    	vif.ALUCntl <= 4'b0010;
+	    	vif.ALUCntl <= trans.ALUCntl;
           	vif.CarryIn <= 0;
 	    	vif.A 	  <= trans.A;
-	    	vif.B 	  <= trans.B;
-	    	@(posedge vif.clk);	    	
-	    	trans.C     <= vif.C;
+	    	vif.B 	  <= trans.B;	    	
+	    	trans.C = vif.C;
           	trans.display("[ Driver ]");
 	    	n_trans++;
     	end;
@@ -59,7 +61,7 @@ class driver;
     	reset();
     	test;
     	//wait(gen.ended.triggered);
-    	wait(gen.REPEAT_COUNT == n_trans);
+    	wait(gen.REPEAT_COUNT < n_trans);
     	$finish;
     endtask
 endclass

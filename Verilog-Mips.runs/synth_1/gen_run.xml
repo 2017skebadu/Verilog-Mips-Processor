@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1597012068">
-  <File Type="PA-TCL" Name="tbench_top.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="tbench_top_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="tbench_top_reports.tcl"/>
-  <File Type="RDS-RDS" Name="tbench_top.vds"/>
-  <File Type="RDS-UTIL" Name="tbench_top_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="tbench_top_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="tbench_top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="tbench_top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="tbench_top_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1597075603">
+  <File Type="PA-TCL" Name="ALU.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="ALU_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="ALU_reports.tcl"/>
+  <File Type="RDS-RDS" Name="ALU.vds"/>
+  <File Type="RDS-UTIL" Name="ALU_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="ALU_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="ALU.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="ALU_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="ALU_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/ALU.v">
@@ -18,58 +18,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/ALU_testbench/interface.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/ALU_testbench/driver.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/ALU_testbench/random_test.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/ALU_testbench/environment.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/ALU_testbench/transaction.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/ALU_testbench/generator.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/ALU_testbench/tb_ALU.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="tbench_top"/>
+      <Option Name="TopModule" Val="ALU"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -86,9 +37,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

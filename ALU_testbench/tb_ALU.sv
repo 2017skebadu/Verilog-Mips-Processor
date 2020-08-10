@@ -8,7 +8,7 @@ module tbench_top;
   //clock generation
   always #10 clk = ~clk;
   
-  //reset Generation
+  //reset generation, then begin test
   initial begin
     reset = 1;
     #10 reset =0;
