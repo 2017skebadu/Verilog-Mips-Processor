@@ -59,9 +59,9 @@
 #Journal - files
 !*.jou
 #Reports
-!*.rpt
-!*.txt
-!*.vdi
+# !*.rpt
+# !*.txt
+# !*.vdi
 #C-files
 !*.c
 !*.h

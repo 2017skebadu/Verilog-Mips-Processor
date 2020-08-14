@@ -47,11 +47,10 @@ reg [31:0] RAM [0:31] = {
 	32'h00000000  //31 $ra 	Return Address
 	};
 
-always @(clock)
+always @(posedge clock)
 begin
-	@(posedge clock)
 	if(regWrite)
-		RAM[int'(read_reg1)] <= writeData;
+		RAM[int'(readReg1)] <= writeData;
 end
 
 assign readData1 = RAM[int'(readReg1)];

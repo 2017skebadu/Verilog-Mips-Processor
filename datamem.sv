@@ -48,19 +48,18 @@ reg [31:0] RAM [0:31] = {
 	32'h00000000  
 	};
 
-always @(memWrite,clock)
+always @(posedge clock)
 begin
-	@(posedge clock)
 	if(memWrite)
-		ram[int'(address[6:2])] <= writeData;
+		RAM[int'(address[6:2])] <= writeData;
 end
 
 always
 begin 
 	if(memRead)
-		readData <= ram[int'(address[6:2])];
+		readData <= RAM[int'(address[6:2])];
 	else
 		readData <= 32'h00000000;
 end
 
-endmodule : datamem
+endmodule
