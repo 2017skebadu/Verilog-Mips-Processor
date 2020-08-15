@@ -71,4 +71,4 @@
 
 # End of https://www.toptal.com/developers/gitignore/api/vivado
 
-./Verilog-Mips.runs/
+Verilog-Mips.runs/
