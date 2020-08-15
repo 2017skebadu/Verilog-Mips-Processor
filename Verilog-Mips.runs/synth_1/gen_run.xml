@@ -1,26 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1597377082">
-  <File Type="PA-TCL" Name="datamem.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="datamem_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="datamem_reports.tcl"/>
-  <File Type="RDS-RDS" Name="datamem.vds"/>
-  <File Type="RDS-UTIL" Name="datamem_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="datamem_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="datamem.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="datamem_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="datamem_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1597463371">
+  <File Type="PA-TCL" Name="four2oneMUX32.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="four2oneMUX32_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="four2oneMUX32_reports.tcl"/>
+  <File Type="RDS-RDS" Name="four2oneMUX32.vds"/>
+  <File Type="RDS-UTIL" Name="four2oneMUX32_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="four2oneMUX32_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="four2oneMUX32.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="four2oneMUX32_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="four2oneMUX32_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/datamem.sv">
+    <File Path="$PPRDIR/four2oneMUX32.v">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/regfile.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -34,9 +26,33 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/datamem.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/instmem.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/regfile.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="datamem"/>
+      <Option Name="TopModule" Val="four2oneMUX32"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
