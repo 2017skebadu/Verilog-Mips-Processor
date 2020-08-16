@@ -16,7 +16,9 @@ module ALU (
 reg [31:0] ALU_Result;
 reg [32:0] Add_Result, Sub_Result, a32, b32;
 reg add_ov,sub_ov;
-reg [32:0] c32 = 4'h0000;
+reg [31:0] ltSignal;
+reg [31:0] ltSignalUns;
+reg [31:0] BNE;
 
 always @(*)
 begin
@@ -33,6 +35,12 @@ begin
 			ALU_Result = A ^ B;
 		4'b1100:	//NOR
 			ALU_Result = A |~ B;
+		4'b1101:	//less than
+			ALU_Result = ltSignal;
+		4'b1110:	//less than unsigned
+			ALU_Result = ltSignalUns;
+		4'b0111:	// branch not equal
+			ALU_Result = BNE;
 		default: ALU_Result = A;
 	endcase // ALUCntl
 	ALUOut <= ALU_Result;
@@ -40,8 +48,7 @@ begin
 	// Addition operation and carry out
 	a32 <= {1'b0, A};
 	b32 <= {1'b0, B};
-	c32[0] <= CarryIn;
-	Add_Result <= a32 + b32 + c32;
+	Add_Result <= a32 + b32 + CarryIn;
 	Sub_Result <= a32 - b32;
 	case(ALUCntl)
 		4'b0010:
@@ -51,8 +58,18 @@ begin
 		default: CarryOut <= 1'bZ;
     endcase
     
+    //Set less than signals
+    if($signed(A) > $signed(B))
+    	ltSignal <= 32'h00000000;
+    else
+    	ltSignal <= 32'h00000001;
+    if(A > B)
+    	ltSignalUns <= 32'h00000000;
+    else
+    	ltSignalUns <= 32'h00000001;
+
 	// Zero flag
-	if(ALU_Result == 4'h0000)
+	if(ALU_Result == 32'h00000000)
 		Zero = 1'b1;
 	else
 		Zero = 1'b0;
@@ -67,6 +84,12 @@ begin
 			Overflow <= sub_ov;
 		default: Overflow <= 1'bZ;
 	endcase
+
+	//Branch on not equal
+	if(A != B)
+		BNE <= 32'h00000000;
+	else
+		BNE <= 32'h11111111;
 end
 endmodule
 

@@ -38,7 +38,7 @@ class driver;
 	    	gen2driv.get(trans);
 	    	@(posedge vif.clk);
 	    	vif.ALUCntl <= trans.ALUCntl;
-          	vif.CarryIn <= 0;
+        vif.CarryIn <= 0;
 	    	vif.A 	  <= trans.A;
 	    	vif.B 	  <= trans.B;	    	
 	    	trans.C = vif.C;

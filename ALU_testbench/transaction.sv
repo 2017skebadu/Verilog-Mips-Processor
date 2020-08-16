@@ -3,7 +3,7 @@ class ALU_item;
 	//declaring the transaction items
 	rand bit [31:0] A;
 	rand bit [31:0] B;
-	rand bit [3:0] ALUCntl;
+	bit [3:0] ALUCntl;
 		 bit [31:0] C;
 
 	//display transaction properties

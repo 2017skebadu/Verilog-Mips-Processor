@@ -11,7 +11,7 @@ class rtest;
 	
 	virtual task run();	
 		//setting repeat count, or choosing how many packets to generate
-		env.gen.REPEAT_COUNT = 10;
+		env.gen.REPEAT_COUNT = 20;
 
 		//runs the env, which runs the generator and driver
 		env.run();
