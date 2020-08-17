@@ -32,7 +32,7 @@ module tbench_top_MUX;
     .B(i_intf.B),
     .C(i_intf.C),
     .cntl(i_intf.cntl),
-    .MUXOut(i_intf.out),
+    .MUXOut(i_intf.out)
    );
   
   //enabling the wave dump

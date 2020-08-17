@@ -1,4 +1,4 @@
-class driverMUX;
+class driver_MUX;
 
 	//creating virtual interface handle
 	virtual MUX_intf vif;
