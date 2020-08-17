@@ -1,5 +1,5 @@
 // Module: instmem
-// Description: instruction memory containing test program code
+// Description: instruction memory containing test program code.
 // 
 //
 
