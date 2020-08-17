@@ -9,7 +9,7 @@ Feel free to download this project and look through it as you'd like. I am using
 ### Updates
 All code and testbenchs now work on the current version, so long as the project and simulation structure doesnt change.
 
-~~I'm having trouble getting many SystemVerilog keywords and functions to work on my liscense of Vivado, so I have temporarily taken to simulating my code on EDA playground untill I can solve my issues. The current testbench suite is run using the Cadence XCelium 19.09 simulator toolkit, without any UVM. ~~
+<del>I'm having trouble getting many SystemVerilog keywords and functions to work on my liscense of Vivado, so I have temporarily taken to simulating my code on EDA playground untill I can solve my issues. The current testbench suite is run using the Cadence XCelium 19.09 simulator toolkit, without any UVM.</del>
 
 ### Prerequisites
 To test the code yourself, all you need is:
