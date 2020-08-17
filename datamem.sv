@@ -54,7 +54,7 @@ begin
 		RAM[int'(address[6:2])] <= writeData;
 end
 
-always
+always @(*)
 begin 
 	if(memRead)
 		readData <= RAM[int'(address[6:2])];
