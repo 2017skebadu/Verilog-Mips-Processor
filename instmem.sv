@@ -4,12 +4,12 @@
 //
 
 module instmem(
-	input [31:0] readInst,
+	input [31:0] pc,
 	output [31:0] instOut
 	);
 
 reg [31:0] RAM [0:64]; //must prefill memory with instruction code here when testing
 
-assign instOut= RAM[int'(readInst)];
+assign instOut= RAM[int'(pc)];
 
 endmodule
