@@ -13,7 +13,7 @@ module control(
 	output reg [1:0] jump,
 	output [5:0] ALUOp,
 	output reg memWrite,
-	output reg ALUSrc,
+	output reg [1:0] ALUSrc,
 	output reg regWrite
 	);
 
@@ -29,7 +29,7 @@ begin
 			memRead	 	<= 0;
 			memToReg 	<= 2'b00;
 			memWrite 	<= 0;
-			ALUSrc 		<= 0;
+			ALUSrc 		<= 2'b00;
 			regWrite 	<= 0;
 			jump 		<= 2'b10;
 		end
@@ -41,7 +41,7 @@ begin
 							memRead	 	<= 0;
 							memToReg 	<= 2'b00;
 							memWrite 	<= 0;
-							ALUSrc 		<= 0;
+							ALUSrc 		<= 2'b00;
 							regWrite 	<= 1;
 							jump 		<= 2'b00;
 						end
@@ -51,7 +51,7 @@ begin
 							memRead	 	<= 0;
 							memToReg 	<= 2'b00;
 							memWrite 	<= 0;
-							ALUSrc 		<= 0;
+							ALUSrc 		<= 2'b00;
 							regWrite 	<= 0;
 							jump 		<= 2'b01;
 						end
@@ -61,7 +61,7 @@ begin
 							memRead	 	<= 0;
 							memToReg 	<= 2'b10;
 							memWrite 	<= 0;
-							ALUSrc 		<= 0;
+							ALUSrc 		<= 2'b00;
 							regWrite 	<= 1;
 							jump 		<= 2'b01;
 						end
@@ -71,7 +71,7 @@ begin
 							memRead	 	<= 0;
 							memToReg 	<= 2'b00;
 							memWrite 	<= 0;
-							ALUSrc 		<= 0;
+							ALUSrc 		<= 2'b00;
 							regWrite 	<= 0;
 							jump 		<= 2'b00;
 						end
@@ -81,7 +81,7 @@ begin
 							memRead	 	<= 0;
 							memToReg 	<= 2'b00;
 							memWrite 	<= 0;
-							ALUSrc 		<= 0;
+							ALUSrc 		<= 2'b00;
 							regWrite 	<= 0;
 							jump 		<= 2'b00;
 						end
@@ -91,7 +91,7 @@ begin
 							memRead	 	<= 0;
 							memToReg 	<= 2'b00;
 							memWrite 	<= 0;
-							ALUSrc 		<= 1;
+							ALUSrc 		<= 2'b01;
 							regWrite 	<= 1;
 							jump 		<= 2'b00;
 						end
@@ -101,7 +101,7 @@ begin
 							memRead	 	<= 0;
 							memToReg 	<= 2'b00;
 							memWrite 	<= 0;
-							ALUSrc 		<= 1;
+							ALUSrc 		<= 2'b01;
 							regWrite 	<= 1;
 							jump 		<= 2'b00;
 						end
@@ -111,7 +111,7 @@ begin
 							memRead	 	<= 0;
 							memToReg 	<= 2'b00;
 							memWrite 	<= 0;
-							ALUSrc 		<= 1;
+							ALUSrc 		<= 2'b01;
 							regWrite 	<= 1;
 							jump 		<= 2'b00;
 						end
@@ -121,7 +121,7 @@ begin
 							memRead	 	<= 0;
 							memToReg 	<= 2'b00;
 							memWrite 	<= 0;
-							ALUSrc 		<= 1;
+							ALUSrc 		<= 2'b01;
 							regWrite 	<= 1;
 							jump 		<= 2'b00;
 						end
@@ -131,7 +131,7 @@ begin
 							memRead	 	<= 0;
 							memToReg 	<= 2'b00;
 							memWrite 	<= 0;
-							ALUSrc 		<= 1;
+							ALUSrc 		<= 2'b01;
 							regWrite 	<= 1;
 							jump 		<= 2'b00;
 						end	
@@ -141,7 +141,7 @@ begin
 							memRead	 	<= 0;
 							memToReg 	<= 2'b00;
 							memWrite 	<= 0;
-							ALUSrc 		<= 1;
+							ALUSrc 		<= 2'b01;
 							regWrite 	<= 1;
 							jump 		<= 2'b00;
 						end
@@ -151,7 +151,7 @@ begin
 							memRead	 	<= 1;
 							memToReg 	<= 2'b00;
 							memWrite 	<= 0;
-							ALUSrc 		<= 0;
+							ALUSrc 		<= 2'b00;
 							regWrite 	<= 1;
 							jump 		<= 2'b00;
 						end
@@ -161,7 +161,7 @@ begin
 							memRead	 	<= 0;
 							memToReg 	<= 2'b00;
 							memWrite 	<= 0;
-							ALUSrc 		<= 0;
+							ALUSrc 		<= 2'b00;
 							regWrite 	<= 0;
 							jump 		<= 2'b00;
 						end
@@ -171,7 +171,7 @@ begin
 							memRead	 	<= 0;
 							memToReg 	<= 2'b00;
 							memWrite 	<= 0;
-							ALUSrc 		<= 0;
+							ALUSrc 		<= 2'b00;
 							regWrite 	<= 0;
 							jump 		<= 2'b00;
 						end

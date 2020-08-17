@@ -1,4 +1,4 @@
-class generator;
+class generator_MUX;
 
 	//declaring the transaction class
 	rand MUX_item trans;
