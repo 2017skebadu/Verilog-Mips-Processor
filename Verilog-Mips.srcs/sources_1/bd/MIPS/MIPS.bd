@@ -1,0 +1,1124 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x99088A99D0FD4100",
+      "device": "xc7a35tcpg236-1",
+      "name": "MIPS",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "ALUControl_0": "",
+      "ALU_0": "",
+      "AND2bit_0": "",
+      "MUX_0": "",
+      "MUX_1": "",
+      "MUX_2": "",
+      "MUX_3": "",
+      "MUX_4": "",
+      "PC_0": "",
+      "PCadd_0": "",
+      "addALU_0": "",
+      "control_0": "",
+      "instmem": "",
+      "regfile": "",
+      "shiftleft2_0": "",
+      "shiftleft2_1": "",
+      "signextender_0": "",
+      "slice_15_0": "",
+      "splice_0": "",
+      "xlconstant_0": "",
+      "xlconstant_1": "",
+      "xlconstant_2": "",
+      "xlslice_0": "",
+      "xlslice_1": "",
+      "xlslice_2": "",
+      "xlslice_3": "",
+      "xlslice_4": "",
+      "xlslice_5": "",
+      "xlslice_6": "",
+      "datamem": ""
+    },
+    "ports": {
+      "ALUout": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "Zero": {
+        "direction": "O"
+      },
+      "carryIn": {
+        "direction": "I"
+      },
+      "carryOut": {
+        "direction": "O"
+      },
+      "clk": {
+        "direction": "I"
+      },
+      "overflow": {
+        "direction": "O"
+      },
+      "pc": {
+        "direction": "O",
+        "left": "4",
+        "right": "0"
+      },
+      "reset": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "ALUControl_0": {
+        "vlnv": "xilinx.com:module_ref:ALUControl:1.0",
+        "xci_name": "MIPS_ALUControl_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ALUControl",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Din": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "ALUOp": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "ALUCntl": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "ALU_0": {
+        "vlnv": "xilinx.com:module_ref:ALU:1.0",
+        "xci_name": "MIPS_ALU_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ALU",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "A": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "B": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "ALUCntl": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "CarryIn": {
+            "direction": "I"
+          },
+          "ALUOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "Zero": {
+            "direction": "O"
+          },
+          "CarryOut": {
+            "direction": "O"
+          },
+          "Overflow": {
+            "direction": "O"
+          }
+        }
+      },
+      "AND2bit_0": {
+        "vlnv": "xilinx.com:module_ref:AND2bit:1.0",
+        "xci_name": "MIPS_AND2bit_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "AND2bit",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "A": {
+            "direction": "I"
+          },
+          "B": {
+            "direction": "I"
+          },
+          "result": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "MUX_0": {
+        "vlnv": "xilinx.com:module_ref:MUX:1.0",
+        "xci_name": "MIPS_MUX_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MUX",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "A": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "B": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "C": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "cntl": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "MUXOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "MUX_1": {
+        "vlnv": "xilinx.com:module_ref:MUX:1.0",
+        "xci_name": "MIPS_MUX_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MUX",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "A": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "B": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "C": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "cntl": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "MUXOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "MUX_2": {
+        "vlnv": "xilinx.com:module_ref:MUX:1.0",
+        "xci_name": "MIPS_MUX_2_0",
+        "parameters": {
+          "BUS_WIDTH": {
+            "value": "5"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MUX",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "A": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "B": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "C": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "cntl": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "MUXOut": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          }
+        }
+      },
+      "MUX_3": {
+        "vlnv": "xilinx.com:module_ref:MUX:1.0",
+        "xci_name": "MIPS_MUX_3_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MUX",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "A": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "B": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "C": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "cntl": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "MUXOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "MUX_4": {
+        "vlnv": "xilinx.com:module_ref:MUX:1.0",
+        "xci_name": "MIPS_MUX_4_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MUX",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "A": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "B": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "C": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "cntl": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "MUXOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "PC_0": {
+        "vlnv": "xilinx.com:module_ref:PC:1.0",
+        "xci_name": "MIPS_PC_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PC",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pc": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "PCadd_0": {
+        "vlnv": "xilinx.com:module_ref:PCadd:1.0",
+        "xci_name": "MIPS_PCadd_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PCadd",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "pc": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pcAdd": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "addALU_0": {
+        "vlnv": "xilinx.com:module_ref:addALU:1.0",
+        "xci_name": "MIPS_addALU_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "addALU",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "pcAdd": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "signExtend": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "result": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "control_0": {
+        "vlnv": "xilinx.com:module_ref:control:1.0",
+        "xci_name": "MIPS_control_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "control",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Din": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "funct": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "regDst": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "branch": {
+            "direction": "O"
+          },
+          "memRead": {
+            "direction": "O"
+          },
+          "memToReg": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "jump": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "ALUOp": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          },
+          "memWrite": {
+            "direction": "O"
+          },
+          "ALUSrc": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "regWrite": {
+            "direction": "O"
+          }
+        }
+      },
+      "instmem": {
+        "vlnv": "xilinx.com:module_ref:instmem_wrapper:1.0",
+        "xci_name": "MIPS_instmem_wrapper_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "instmem_wrapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "pc": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "instOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "regfile": {
+        "vlnv": "xilinx.com:module_ref:regfile_wrapper:1.0",
+        "xci_name": "MIPS_regfile_wrapper_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "regfile_wrapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clock": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "regWrite": {
+            "direction": "I"
+          },
+          "readReg1": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "readReg2": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "writeData": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "writeReg": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "readData1": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "readData2": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "shiftleft2_0": {
+        "vlnv": "xilinx.com:module_ref:shiftleft2:1.0",
+        "xci_name": "MIPS_shiftleft2_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "shiftleft2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "shiftIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "shift": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "shiftleft2_1": {
+        "vlnv": "xilinx.com:module_ref:shiftleft2:1.0",
+        "xci_name": "MIPS_shiftleft2_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "shiftleft2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "shiftIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "shift": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "signextender_0": {
+        "vlnv": "xilinx.com:module_ref:signextender:1.0",
+        "xci_name": "MIPS_signextender_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "signextender",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "instIn": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "extended": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "slice_15_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "MIPS_slice_15_0_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "15"
+          },
+          "DOUT_WIDTH": {
+            "value": "16"
+          }
+        }
+      },
+      "splice_0": {
+        "vlnv": "xilinx.com:module_ref:splice:1.0",
+        "xci_name": "MIPS_splice_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "splice",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "din": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "PC": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "dout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "MIPS_xlconstant_0_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          },
+          "CONST_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
+      "xlconstant_1": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "MIPS_xlconstant_1_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "31"
+          },
+          "CONST_WIDTH": {
+            "value": "5"
+          }
+        }
+      },
+      "xlconstant_2": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "MIPS_xlconstant_2_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          },
+          "CONST_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
+      "xlslice_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "MIPS_xlslice_0_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "5"
+          },
+          "DOUT_WIDTH": {
+            "value": "6"
+          }
+        }
+      },
+      "xlslice_1": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "MIPS_xlslice_1_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "20"
+          },
+          "DIN_TO": {
+            "value": "16"
+          },
+          "DOUT_WIDTH": {
+            "value": "5"
+          }
+        }
+      },
+      "xlslice_2": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "MIPS_xlslice_2_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "25"
+          },
+          "DIN_TO": {
+            "value": "21"
+          },
+          "DOUT_WIDTH": {
+            "value": "5"
+          }
+        }
+      },
+      "xlslice_3": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "MIPS_xlslice_3_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "15"
+          },
+          "DIN_TO": {
+            "value": "11"
+          },
+          "DOUT_WIDTH": {
+            "value": "5"
+          }
+        }
+      },
+      "xlslice_4": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "MIPS_xlslice_4_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "31"
+          },
+          "DIN_TO": {
+            "value": "26"
+          },
+          "DOUT_WIDTH": {
+            "value": "6"
+          }
+        }
+      },
+      "xlslice_5": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "MIPS_xlslice_5_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "5"
+          },
+          "DOUT_WIDTH": {
+            "value": "6"
+          }
+        }
+      },
+      "xlslice_6": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "MIPS_xlslice_6_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "6"
+          },
+          "DIN_TO": {
+            "value": "2"
+          },
+          "DOUT_WIDTH": {
+            "value": "5"
+          }
+        }
+      },
+      "datamem": {
+        "vlnv": "xilinx.com:module_ref:datamem_wrapper:1.0",
+        "xci_name": "MIPS_datamem_wrapper_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "datamem_wrapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clock_w": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "address_w": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "writeData_w": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "memWrite_w": {
+            "direction": "I"
+          },
+          "memRead_w": {
+            "direction": "I"
+          },
+          "readData_w": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "ALUControl_0_ALUCntl": {
+        "ports": [
+          "ALUControl_0/ALUCntl",
+          "ALU_0/ALUCntl"
+        ]
+      },
+      "ALU_0_ALUOut": {
+        "ports": [
+          "ALU_0/ALUOut",
+          "ALUout",
+          "MUX_1/A",
+          "datamem/address_w"
+        ]
+      },
+      "ALU_0_CarryOut": {
+        "ports": [
+          "ALU_0/CarryOut",
+          "carryOut"
+        ]
+      },
+      "ALU_0_Overflow": {
+        "ports": [
+          "ALU_0/Overflow",
+          "overflow"
+        ]
+      },
+      "ALU_0_Zero": {
+        "ports": [
+          "ALU_0/Zero",
+          "Zero",
+          "AND2bit_0/A"
+        ]
+      },
+      "AND2bit_0_result": {
+        "ports": [
+          "AND2bit_0/result",
+          "MUX_4/cntl"
+        ]
+      },
+      "MUX_0_MUXOut": {
+        "ports": [
+          "MUX_0/MUXOut",
+          "ALU_0/B"
+        ]
+      },
+      "MUX_1_MUXOut": {
+        "ports": [
+          "MUX_1/MUXOut",
+          "regfile/writeData"
+        ]
+      },
+      "MUX_2_MUXOut": {
+        "ports": [
+          "MUX_2/MUXOut",
+          "regfile/writeReg"
+        ]
+      },
+      "MUX_3_MUXOut": {
+        "ports": [
+          "MUX_3/MUXOut",
+          "PC_0/addr"
+        ]
+      },
+      "MUX_4_MUXOut": {
+        "ports": [
+          "MUX_4/MUXOut",
+          "MUX_3/A"
+        ]
+      },
+      "PC_0_pc": {
+        "ports": [
+          "PC_0/pc",
+          "instmem/pc",
+          "PCadd_0/pc",
+          "xlslice_6/Din"
+        ]
+      },
+      "PCadd_0_pcAdd": {
+        "ports": [
+          "PCadd_0/pcAdd",
+          "MUX_1/C",
+          "splice_0/PC",
+          "MUX_4/A",
+          "addALU_0/pcAdd"
+        ]
+      },
+      "addALU_0_result": {
+        "ports": [
+          "addALU_0/result",
+          "MUX_4/B"
+        ]
+      },
+      "carryIn_1": {
+        "ports": [
+          "carryIn",
+          "ALU_0/CarryIn"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "regfile/clock",
+          "PC_0/clk",
+          "datamem/clock_w"
+        ]
+      },
+      "control_0_ALUOp": {
+        "ports": [
+          "control_0/ALUOp",
+          "ALUControl_0/ALUOp"
+        ]
+      },
+      "control_0_ALUSrc": {
+        "ports": [
+          "control_0/ALUSrc",
+          "MUX_0/cntl"
+        ]
+      },
+      "control_0_branch": {
+        "ports": [
+          "control_0/branch",
+          "AND2bit_0/B"
+        ]
+      },
+      "control_0_jump": {
+        "ports": [
+          "control_0/jump",
+          "MUX_3/cntl"
+        ]
+      },
+      "control_0_memRead": {
+        "ports": [
+          "control_0/memRead",
+          "datamem/memRead_w"
+        ]
+      },
+      "control_0_memToReg": {
+        "ports": [
+          "control_0/memToReg",
+          "MUX_1/cntl"
+        ]
+      },
+      "control_0_memWrite": {
+        "ports": [
+          "control_0/memWrite",
+          "datamem/memWrite_w"
+        ]
+      },
+      "control_0_regDst": {
+        "ports": [
+          "control_0/regDst",
+          "MUX_2/cntl"
+        ]
+      },
+      "control_0_regWrite": {
+        "ports": [
+          "control_0/regWrite",
+          "regfile/regWrite"
+        ]
+      },
+      "datamem_wrapper_0_readData_w": {
+        "ports": [
+          "datamem/readData_w",
+          "MUX_1/B"
+        ]
+      },
+      "instmem_wrapper_0_instOut": {
+        "ports": [
+          "instmem/instOut",
+          "xlslice_0/Din",
+          "xlslice_1/Din",
+          "xlslice_2/Din",
+          "xlslice_3/Din",
+          "xlslice_4/Din",
+          "xlslice_5/Din",
+          "slice_15_0/Din",
+          "shiftleft2_0/shiftIn"
+        ]
+      },
+      "regfile_wrapper_0_readData1": {
+        "ports": [
+          "regfile/readData1",
+          "ALU_0/A",
+          "MUX_3/C"
+        ]
+      },
+      "regfile_wrapper_0_readData2": {
+        "ports": [
+          "regfile/readData2",
+          "MUX_0/A",
+          "datamem/writeData_w"
+        ]
+      },
+      "reset_1": {
+        "ports": [
+          "reset",
+          "PC_0/rst"
+        ]
+      },
+      "shiftleft2_0_shift": {
+        "ports": [
+          "shiftleft2_0/shift",
+          "splice_0/din"
+        ]
+      },
+      "shiftleft2_1_shift": {
+        "ports": [
+          "shiftleft2_1/shift",
+          "addALU_0/signExtend"
+        ]
+      },
+      "signextender_0_extended": {
+        "ports": [
+          "signextender_0/extended",
+          "MUX_0/B",
+          "shiftleft2_1/shiftIn"
+        ]
+      },
+      "splice_0_dout": {
+        "ports": [
+          "splice_0/dout",
+          "MUX_3/B"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "MUX_0/C"
+        ]
+      },
+      "xlconstant_1_dout": {
+        "ports": [
+          "xlconstant_1/dout",
+          "MUX_2/C"
+        ]
+      },
+      "xlconstant_2_dout": {
+        "ports": [
+          "xlconstant_2/dout",
+          "MUX_4/C"
+        ]
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "xlslice_0/Dout",
+          "ALUControl_0/Din"
+        ]
+      },
+      "xlslice_1_Dout": {
+        "ports": [
+          "xlslice_1/Dout",
+          "regfile/readReg2",
+          "MUX_2/A"
+        ]
+      },
+      "xlslice_2_Dout": {
+        "ports": [
+          "xlslice_2/Dout",
+          "regfile/readReg1"
+        ]
+      },
+      "xlslice_3_Dout": {
+        "ports": [
+          "xlslice_3/Dout",
+          "MUX_2/B"
+        ]
+      },
+      "xlslice_4_Dout": {
+        "ports": [
+          "xlslice_4/Dout",
+          "control_0/Din"
+        ]
+      },
+      "xlslice_5_Dout": {
+        "ports": [
+          "xlslice_5/Dout",
+          "control_0/funct"
+        ]
+      },
+      "xlslice_6_Dout": {
+        "ports": [
+          "xlslice_6/Dout",
+          "pc"
+        ]
+      },
+      "slice_15_0_Dout": {
+        "ports": [
+          "slice_15_0/Dout",
+          "signextender_0/instIn"
+        ]
+      }
+    }
+  }
+}

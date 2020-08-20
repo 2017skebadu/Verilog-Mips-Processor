@@ -4,7 +4,7 @@ module datamem_wrapper(
 	input [31:0] writeData_w,
 	input memWrite_w,
 	input memRead_w,
-	output reg [31:0] readData_w
+	output readData_w
 	);
 
 datamem RAM(

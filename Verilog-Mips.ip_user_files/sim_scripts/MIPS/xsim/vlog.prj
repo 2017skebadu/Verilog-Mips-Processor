@@ -1,0 +1,36 @@
+verilog xil_defaultlib  \
+"../../../bd/MIPS/ip/MIPS_ALUControl_0_0/sim/MIPS_ALUControl_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_ALU_0_0/sim/MIPS_ALU_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_AND2bit_0_0/sim/MIPS_AND2bit_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_MUX_0_0/sim/MIPS_MUX_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_MUX_1_0/sim/MIPS_MUX_1_0.v" \
+"../../../bd/MIPS/ip/MIPS_MUX_2_0/sim/MIPS_MUX_2_0.v" \
+"../../../bd/MIPS/ip/MIPS_MUX_3_0/sim/MIPS_MUX_3_0.v" \
+"../../../bd/MIPS/ip/MIPS_MUX_4_0/sim/MIPS_MUX_4_0.v" \
+"../../../bd/MIPS/ip/MIPS_PC_0_0/sim/MIPS_PC_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_PCadd_0_0/sim/MIPS_PCadd_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_addALU_0_0/sim/MIPS_addALU_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_control_0_0/sim/MIPS_control_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_datamem_wrapper_0_0/sim/MIPS_datamem_wrapper_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_instmem_wrapper_0_0/sim/MIPS_instmem_wrapper_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_regfile_wrapper_0_0/sim/MIPS_regfile_wrapper_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_shiftleft2_0_0/sim/MIPS_shiftleft2_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_shiftleft2_1_0/sim/MIPS_shiftleft2_1_0.v" \
+"../../../bd/MIPS/ip/MIPS_signextender_0_0/sim/MIPS_signextender_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_slice_15_0_0/sim/MIPS_slice_15_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_splice_0_0/sim/MIPS_splice_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_xlconstant_0_0/sim/MIPS_xlconstant_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_xlconstant_1_0/sim/MIPS_xlconstant_1_0.v" \
+"../../../bd/MIPS/ip/MIPS_xlconstant_2_0/sim/MIPS_xlconstant_2_0.v" \
+"../../../bd/MIPS/ip/MIPS_xlslice_0_0/sim/MIPS_xlslice_0_0.v" \
+"../../../bd/MIPS/ip/MIPS_xlslice_1_0/sim/MIPS_xlslice_1_0.v" \
+"../../../bd/MIPS/ip/MIPS_xlslice_2_0/sim/MIPS_xlslice_2_0.v" \
+"../../../bd/MIPS/ip/MIPS_xlslice_3_0/sim/MIPS_xlslice_3_0.v" \
+"../../../bd/MIPS/ip/MIPS_xlslice_4_0/sim/MIPS_xlslice_4_0.v" \
+"../../../bd/MIPS/ip/MIPS_xlslice_5_0/sim/MIPS_xlslice_5_0.v" \
+"../../../bd/MIPS/ip/MIPS_xlslice_6_0/sim/MIPS_xlslice_6_0.v" \
+"../../../bd/MIPS/sim/MIPS.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort
